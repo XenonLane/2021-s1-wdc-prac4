@@ -192,4 +192,21 @@ router.get('/log-ro.json', function(req, res, next) {
   res.json(dates_array2);
 });
 
+
+//task 4.4
+router.get('/contact.ajax', function(req, res, next) {
+  res.send(`<a href = "howrunow@goodnu.notsobad.com"> howrunow@goodnu.notsobad.com</a>`);
+});
+
+router.get('/about.ajax', function(req, res, next) {
+  res.send("<p>Yeah so this AJAX stuff is not so bad ay, I would definitely recommend it to my mother and that's something I don't say lightly<p>");
+});
+
+router.get('/search.ajax', function(req, res, next) {
+  res.send(`<form>
+            <input type = "text" placeholder = "Search..." name = "search">
+            <button type = "submit">submit</button>
+            </form>`);
+});
+
 module.exports = router;
