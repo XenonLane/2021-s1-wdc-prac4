@@ -10,8 +10,8 @@ router.get('/', function(req, res, next) {
 //task3.1
 /*retrieves last time page was visited*/
 router.get('/last.txt', function(req, res, next) {
-    let last_visit = Date();
-    res.send(last_visit);
+  let last_visit = Date();
+  res.send(last_visit);
 });
 
 
@@ -21,10 +21,9 @@ let count = 0;
 
 router.get('/color.html', function(req, res, next) {
 
-    let colour = "";
+  let colour = "";
 
-    switch(count % 4)
-    {
+  switch (count % 4) {
     case 0:
       colour = "red";
       break;
@@ -44,9 +43,9 @@ router.get('/color.html', function(req, res, next) {
     default:
       //throw error
       break;
-    }
+  }
 
-      let html = `<!Doctype html>
+  let html = `<!Doctype html>
 <html lang = "en">
     <head>
         <title>Yeet</title>
@@ -57,9 +56,9 @@ router.get('/color.html', function(req, res, next) {
     </body>
 </html>`;
 
-    count++;
+  count++;
 
-    res.send(html);
+  res.send(html);
 });
 
 
@@ -75,8 +74,7 @@ router.get('/log.html', function(req, res, next) {
   let end_li = "</li>";
   let list = "";
 
-  for(let i = 0; i < dates_array.length; i++)
-  {
+  for (let i = 0; i < dates_array.length; i++) {
     list = list + start_li + dates_array[i] + end_li + "\n";
   }
 
@@ -89,7 +87,7 @@ router.get('/log.html', function(req, res, next) {
                 </head>
                 <body>
                     <ul>
-                    `+ list + `
+                    ` + list + `
                     </ul>
                 </body>
             </html>`;
@@ -103,10 +101,9 @@ let welcome_visited = false;
 router.get('/first.html', function(req, res, next) {
   let html = "";
 
-  if(!welcome_visited)
-  {
+  if (!welcome_visited) {
     welcome_visited = true;
-    html =`<!Doctype html>
+    html = `<!Doctype html>
             <html lang = "en">
                 <head>
                     <title>Yeet</title>
@@ -120,8 +117,7 @@ router.get('/first.html', function(req, res, next) {
             </html>`;
     res.send(html);
   }
-  else
-  {
+  else {
     res.redirect('/main.html');
   }
 });
@@ -129,12 +125,10 @@ router.get('/first.html', function(req, res, next) {
 router.get('/main.html', function(req, res, next) {
   let html = "";
 
-  if(!welcome_visited)
-  {
+  if (!welcome_visited) {
     res.redirect('/first.html');
   }
-  else
-  {
+  else {
     html = `<!Doctype html>
               <html lang = "en">
                   <head>
@@ -149,6 +143,40 @@ router.get('/main.html', function(req, res, next) {
               </html>`;
     res.send(html);
   }
+});
+
+
+//task 4.2
+let colour_counter2 = 0;
+
+router.get('/color.txt', function(req, res, next) {
+  let colour = "";
+
+  switch (colour_counter2 % 4) {
+    case 0:
+      colour = "red";
+      break;
+
+    case 1:
+      colour = "yellow";
+      break;
+
+    case 2:
+      colour = "green";
+      break;
+
+    case 3:
+      colour = "blue";
+      break;
+
+    default:
+      //throw error
+      break;
+  }
+
+  colour_counter2++;
+
+  res.send(colour);
 });
 
 module.exports = router;
