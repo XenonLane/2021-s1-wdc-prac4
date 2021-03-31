@@ -199,7 +199,7 @@ router.get('/contact.ajax', function(req, res, next) {
 });
 
 router.get('/about.ajax', function(req, res, next) {
-  res.send("<p>Yeah so this AJAX stuff is not so bad ay, I would definitely recommend it to my mother and that's something I don't say lightly<p>");
+  res.send();
 });
 
 router.get('/search.ajax', function(req, res, next) {
