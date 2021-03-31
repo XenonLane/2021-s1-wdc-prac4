@@ -179,4 +179,17 @@ router.get('/color.txt', function(req, res, next) {
   res.send(colour);
 });
 
+//task4.3
+let dates_array2 = [];
+
+router.get('/log.json', function(req, res, next) {
+  let date = Date();
+  dates_array2.push(date);
+  res.json(dates_array2);
+});
+
+router.get('/log-ro.json', function(req, res, next) {
+  res.json(dates_array2);
+});
+
 module.exports = router;
