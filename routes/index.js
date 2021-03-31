@@ -67,7 +67,7 @@ router.get('/color.html', function(req, res, next) {
 /*creates a list of all the dates and times the page has been logged into*/
 let dates_array = [];
 
-router.get('/log.txt', function(req, res, next) {
+router.get('/log.html', function(req, res, next) {
 
   let date = Date();
   dates_array.push(date);
