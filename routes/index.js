@@ -216,7 +216,7 @@ let ToC_visited = false;
 //sends an empty response that should have code 200 OK?
 router.get('/accept', function(req, res, next) {
   ToC_visited = true;
-  res.status(200).redirect("/content.ajax");
+  res.status(200).send();
 });
 
 router.get('/content.ajax', function(req, res, next)
@@ -225,8 +225,8 @@ router.get('/content.ajax', function(req, res, next)
   {
     res.statusCode = 403;
     res.send(`<p>You gotta accept these conditions if you want access to the delightful content of this website,<br/>
-                          please sign your privacy and rights to compensation away here!</p>
-                          <button onclick = "accept_ToC()">Click To Accept ToC</button>`);
+              please sign your privacy and rights to compensation away here!</p>
+              <button onclick = "accept_ToC()">Click To Accept ToC</button>`);
   }
   else
   {
