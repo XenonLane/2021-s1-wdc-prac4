@@ -223,7 +223,8 @@ router.get('/content.ajax', function(req, res, next)
 {
   if(!ToC_visited)
   {
-    res.status(403).send(`<p>You gotta accept these conditions if you want access to the delightful content of this website,<br/>
+    res.statusCode = 403;
+    res.send(`<p>You gotta accept these conditions if you want access to the delightful content of this website,<br/>
                           please sign your privacy and rights to compensation away here!</p>
                           <button onclick = "accept_ToC()">Click To Accept ToC</button>`);
   }
