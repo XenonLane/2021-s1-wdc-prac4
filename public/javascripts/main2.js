@@ -10,7 +10,7 @@ function check_ToC()
         else if(this.readyState == 4 && this.status == 403)
         {
             document.getElementById("heading").style.display = "none";
-            document.getElementById("content").innerHTML = xhttp.responseText;
+            document.getElementById("ToC").style.display = "block";
         }
     };
 
@@ -25,6 +25,7 @@ function accept_ToC()
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           // Typical action to be performed when the document is ready:
+          document.getElementById("ToC").style.display = "none";
           document.getElementById("heading").style.display = "block";
           document.getElementById("content").innerHTML = xhttp.responseText;
         }
