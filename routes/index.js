@@ -216,7 +216,8 @@ let ToC_visited = false;
 //sends an empty response that should have code 200 OK?
 router.get('/accept', function(req, res, next) {
   ToC_visited = true;
-  res.status(200).send();
+  res.status(200).send(`<p>this is the pages content</p>
+                        <p>bababooey</p>`);
 });
 
 router.get('/content.ajax', function(req, res, next)
